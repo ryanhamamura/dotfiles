@@ -20,7 +20,8 @@ sudo apt install stow
 
 ## Installation
 
-First, check out the dotfiles repo in your $HOME directory using git 
+First, check out the dotfiles repo in your $HOME directory using git. Ensure 
+the original dotfiles have been removed before stowing. 
 
 ```sh
 git clone git@github.com/ryanhamamura/dotfiles.git
