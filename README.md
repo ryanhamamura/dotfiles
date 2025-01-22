@@ -6,16 +6,19 @@ This directory contains the dotfiles for my system
 
 Ensure you have the following installed on your system
 
-### Git
-
 ```sh
-sudo apt install git
+sudo apt install git stow zsh
+```
+### Verify installation
+```sh
+zsh --version
+# Expected result: 5.0.8 or newer
 ```
 
-### Stow
-
+### Make zsh the default shell
 ```sh
-sudo apt install stow
+chsh -s $(which zsh)
+# If you are on Fedora, use sudo chsh $USER for recent versions or sudo lchsh $USER for older versions.
 ```
 
 ## Installation
@@ -33,5 +36,8 @@ then use GNU stow to create symlinks
 ```sh
 stow .
 ```
+
+Log out and log back in
+
 
 
