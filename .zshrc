@@ -65,3 +65,11 @@ alias vim=nvim
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# set PATH so it includes /usr/local/go/bin if it exists 
+if [ -d "/usr/local/go/bin" ] ; then 
+  PATH="/usr/local/go/bin:$PATH"
+fi
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
