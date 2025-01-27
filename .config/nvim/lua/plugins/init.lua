@@ -25,6 +25,16 @@ return {
     ft = "go",
   },
   -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css", "go",
+  --       "markdown",
+  -- 		},
+  -- 	},
+  -- },
+  -- {
   --   "pasky/claude.vim",
   --   lazy = false,
   --   config = function()
@@ -39,15 +49,5 @@ return {
   --   vim.keymap.set("v", "<leader>Ci", ":'<,'>ClaudeImplement ", { noremap = true, desc = "Claude Implement" })
   --   vim.keymap.set("n", "<leader>Cc", ":ClaudeChat<CR>", { noremap = true, silent = true, desc = "Claude Chat" })
   --   end
-  -- },
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
   -- },
 }
