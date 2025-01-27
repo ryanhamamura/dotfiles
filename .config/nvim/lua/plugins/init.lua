@@ -12,6 +12,18 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+   },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
+  {
+    "fatih/vim-go",
+    ft = "go",
+  },
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
