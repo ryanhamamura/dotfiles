@@ -14,6 +14,10 @@ sudo apt install git stow zsh
 zsh --version
 # Expected result: 5.0.8 or newer
 ```
+### Install oh-my-posh
+```sh
+curl -s https://ohmyposh.dev/install.sh | bash -s
+```
 
 ### Make zsh the default shell
 ```sh
@@ -30,7 +34,12 @@ the original dotfiles have been removed before stowing.
 git clone git@github.com:ryanhamamura/dotfiles.git
 cd dotfiles
 ```
-
+### Ensure existing config files are backed up
+```sh 
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.config/ohmyposh ~/.config/ohmyposh.bak
+mv ~/.zshrc ~/.zshrc.bak 
+```
 then use GNU stow to create symlinks
 
 ```sh
