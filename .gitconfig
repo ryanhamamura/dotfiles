@@ -4,3 +4,9 @@
   username = ryanhamamura
 [init]
   defaultBranch = main
+[fetch]
+  prune = true
+  pruneTags = true
+[remote "origin"]
+  fetch = +refs/heads/*:refs/remotes/origin/*
+  tagOpt = --tags

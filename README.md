@@ -7,7 +7,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```sh
-sudo apt install git stow zsh
+sudo apt install git stow zsh golang-1.20
 ```
 ### Verify installation
 ```sh
@@ -47,6 +47,32 @@ stow .
 ```
 
 Log out and log back in
+
+## Installing Go from source
+```sh
+cd ~/
+git clone https://go.googlesource.com/go goroot
+cd goroot
+git checkout <tag>
+```
+Use `git tag -n` to view latest tags. 
+
+### Build
+```sh 
+cd src 
+./all.bash
+```
+
+If successful, print output will look like this: 
+``` 
+ALL TESTS PASSED
+
+---
+Installed Go for linux/amd64 in /home/you/go.
+Installed commands in /home/you/go/bin.
+*** You need to add /home/you/go/bin to your $PATH. ***
+```
+
 
 
 
