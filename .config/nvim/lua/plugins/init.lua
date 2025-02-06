@@ -27,7 +27,7 @@ return {
     opts = {
       ensure_installed = {
         "dockerfile", "go", "goctl",
-        "go-template", "gomod", "gosum",
+        "gomod", "gosum", "gowork",
         "html", "css", "bash",
         "ini", "javascript", "typescript",
         "json", "lua", "luadoc",
