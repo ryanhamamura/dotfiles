@@ -27,7 +27,7 @@ return {
   {
   	"nvim-treesitter/nvim-treesitter",
     opts = function()
-      require "configs.treesitter"
+      return require "configs.treesitter"
     end,
   	-- opts = {
   	-- 	ensure_installed = {
