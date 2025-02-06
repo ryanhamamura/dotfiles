@@ -24,16 +24,19 @@ return {
     "fatih/vim-go",
     ft = "go",
   },
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css", "go",
-  --       "markdown",
-  -- 		},
-  -- 	},
-  -- },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+    opts = function()
+      require "configs.treesitter"
+    end,
+  	-- opts = {
+  	-- 	ensure_installed = {
+  	-- 		"vim", "lua", "vimdoc",
+  	--     "html", "css", "go",
+  	--      "markdown",
+  	-- 	},
+  	-- },
+  },
   -- {
   --   "pasky/claude.vim",
   --   lazy = false,
