@@ -24,16 +24,18 @@ return {
   },
   {
   	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-  	    "html", "css", "go",
-  	     "markdown", "python",
-        "html", "yaml", "toml",
-        "http", "gomod", "gosum",
-        "gowork", "goctl", "dockerfile",
-  		},
-  	},
+    opts = {
+      ensure_installed = {
+        "dockerfile", "go", "goctl",
+        "go-template", "gomod", "gosum",
+        "html", "css", "bash",
+        "ini", "javascript", "typescript",
+        "json", "lua", "luadoc",
+        "markdown", "python", "sql",
+        "toml", "typescript", "vim",
+        "vimdoc", "xml", "yaml",
+      },
+    },
   },
   -- {
   --   "pasky/claude.vim",
