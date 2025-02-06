@@ -24,14 +24,14 @@ return {
   },
   {
   	"nvim-treesitter/nvim-treesitter",
-    -- opts = function()
-    --   return require "configs.treesitter"
-    -- end,
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
   	    "html", "css", "go",
-  	     "markdown", "python"
+  	     "markdown", "python",
+        "html", "yaml", "toml",
+        "http", "gomod", "gosum",
+        "gowork", "goctl", "dockerfile",
   		},
   	},
   },
