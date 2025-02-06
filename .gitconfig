@@ -2,3 +2,5 @@
 	email = 58859899+ryanhamamura@users.noreply.github.com
 	name = Ryan Hamamura
   username = ryanhamamura
+[init]
+  defaultBranch = main
