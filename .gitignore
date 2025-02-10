@@ -1,0 +1,82 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.*.sw?
+.netrwhist
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages and archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Environment and local config files
+.env
+.env.local
+.env.*.local
+.python-version
+.ruby-version
+.node-version
+.tool-versions
+
+# Dependency directories
+node_modules/
+vendor/
+.bundle/
+
+# Cache directories
+.cache/
+.npm/
+.yarn/
+.pip/
+
+# History files
+.bash_history
+.zsh_history
+.python_history
+.node_repl_history
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+.*.un~
+
+# Personal files you might not want to share
+.ssh/
+.gnupg/
+.aws/
+.kube/
+.config/gcloud/
+.config/go/telemetry/
