@@ -14,6 +14,17 @@ sudo apt install git stow zsh golang-1.20
 zsh --version
 # Expected result: 5.0.8 or newer
 ```
+### Install neovim from source
+```sh
+# Ubuntu/Debian
+sudo apt-get install ninja-build gettext cmake curl build-essential
+
+git clone https://github.com/neovim/neovim
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+```
 ### Install oh-my-posh
 ```sh
 curl -s https://ohmyposh.dev/install.sh | bash -s
