@@ -91,8 +91,8 @@ Installed commands in /home/you/go/bin.
 git clone https://github.com/go-nv/goenv.git ~/.goenv 
 ```
 - **Usage:**
-> - List versions: `goenv install -l`
-> - Install a version: `goenv install 1.22.7`
-> - Set globally: `goenv global 1.21.6`
-> - Set locally (per project): `goenv local 1.20.4`
+  - List versions: `goenv install -l`
+  - Install a version: `goenv install 1.22.7`
+  - Set globally: `goenv global 1.21.6`
+  - Set locally (per project): `goenv local 1.20.4`
 
