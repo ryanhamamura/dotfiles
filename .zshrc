@@ -66,3 +66,7 @@ export GOROOT_BOOTSTRAP=/usr/lib/go-1.20
 export GOROOT=$HOME/goroot
 export GOPATH=$HOME/go  # where executables outside the Go distribution are installed using the go command
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# Go-env 
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
