@@ -72,5 +72,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Go-env 
-export PATH="$HOME/.goenv/bin:$PATH"
-eval "$(goenv init -)"
+# export PATH="$HOME/.goenv/bin:$PATH"
+# eval "$(goenv init -)"
