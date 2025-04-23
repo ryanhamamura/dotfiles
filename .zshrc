@@ -14,12 +14,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -U compinit && compinit
-
-# fzf-tab needs to be after compinit apparently
-zinit light Aloxaf/fzf-tab
 
 # Source oh-my-posh 
 export PATH=$HOME/.local/bin:$PATH
