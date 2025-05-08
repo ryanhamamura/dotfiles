@@ -7,7 +7,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```sh
-sudo apt install git stow zsh golang-1.20
+sudo apt install git stow zsh
 ```
 ### Verify installation
 ```sh
@@ -22,11 +22,13 @@ sudo apt-get install ninja-build gettext cmake curl build-essential
 git clone https://github.com/neovim/neovim
 cd neovim
 git checkout stable
-make CMAKE_BUILD_TYPE=RelWithDebInfo
+make
 sudo make install
 ```
 ### Install oh-my-posh
 ```sh
+# The install script requires unzip
+sudo apt install unzip
 curl -s https://ohmyposh.dev/install.sh | bash -s
 ```
 
