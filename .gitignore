@@ -80,3 +80,5 @@ vendor/
 .kube/
 .config/gcloud/
 .config/go/telemetry/
+.config/Bitwarden CLI/
+.config/google-chrome/
