@@ -14,12 +14,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -U compinit && compinit
-
-# fzf-tab needs to be after compinit apparently
-zinit light Aloxaf/fzf-tab
 
 # Source oh-my-posh 
 export PATH=$HOME/.local/bin:$PATH
@@ -62,7 +60,7 @@ if [ -d "/usr/local/go/bin" ] ; then
 fi
 
 # Setting Go variables
-export GOROOT_BOOTSTRAP=/usr/lib/go-1.20
+export GOROOT_BOOTSTRAP=/usr/lib/go-1.23
 export GOROOT=$HOME/goroot
 export GOPATH=$HOME/go  # where executables outside the Go distribution are installed using the go command
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
