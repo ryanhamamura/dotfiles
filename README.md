@@ -7,7 +7,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```sh
-sudo apt install git stow zsh
+sudo apt install git stow zsh fzf
 ```
 ### Verify installation
 ```sh

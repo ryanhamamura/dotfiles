@@ -29,6 +29,10 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+-- init.lua customizations 
+dofile(vim.g.base46_cache .. "render-markdown")
+-- end customizations
+
 require "options"
 require "nvchad.autocmds"
 
