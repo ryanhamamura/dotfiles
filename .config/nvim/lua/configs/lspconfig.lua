@@ -60,4 +60,10 @@ lspconfig.ruby_lsp.setup {
     formatter = "auto",
     linters = { "rubocop" },
   },
+
+  -- Customize how ruby-lsp is launched
+  cmd = { "ruby-lsp" },
+
+  -- Only attach Ruby file 
+  filetypes = { "ruby", "eruby" },
 }
