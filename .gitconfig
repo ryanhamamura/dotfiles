@@ -7,3 +7,9 @@
 #[remote "origin"]
 #  fetch = +refs/heads/*:refs/remotes/origin/*
 #  tagOpt = --tags
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

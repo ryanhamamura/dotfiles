@@ -82,3 +82,5 @@ vendor/
 .config/go/telemetry/
 .config/Bitwarden CLI/
 .config/google-chrome/
+.config/configstore/ 
+.config/gh/
