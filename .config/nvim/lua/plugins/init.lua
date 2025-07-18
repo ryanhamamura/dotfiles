@@ -11,6 +11,15 @@ return {
     end,
   },
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gopls",
+        "ruby-lsp",
+      },
+    },
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
     ft = "go",
    },
