@@ -72,3 +72,23 @@ export NVM_DIR="$HOME/.nvm"
 # Go-env 
 # export PATH="$HOME/.goenv/bin:$PATH"
 # eval "$(goenv init -)"
+
+# --- Mise Config --- 
+# 
+# Auto-install mise if not present 
+if ! command -v ~/.local/bin/mise &> /dev/null; then 
+  echo "mise not found. Installing mise..."
+
+  # Create ~/.local/bin if it doesn't exist 
+  mkdir -p ~/.local/bin 
+
+  # Install mise using official installer 
+  curl -fsSL https://mise.run | sh 
+
+  echo "mise has been installed successfully!" 
+fi
+
+# Initialize mise for zsh (this should run whether mise was just installed or already existed)
+if [ -f ~/.local/bin/mise ]; then 
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
