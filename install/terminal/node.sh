@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mise use -g node@20
+mise use -g node@24
