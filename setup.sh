@@ -32,14 +32,31 @@ fi
 
 
 echo "Backing up any existing dotfiles..." 
-mv ~/.zshrc ~/.zshrc.bak 
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.config/ohmyposh ~/.config/ohmyposh.bak
+[ -f ~/.zshrc ] && [ ! -L ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak 
+[ -d ~/.config/nvim ] && [ ! -L ~/.config/nvim ] && mv ~/.config/nvim ~/.config/nvim.bak
+[ -d ~/.config/ohmyposh ] && [ ! -L ~/.config/ohmyposh ] && mv ~/.config/ohmyposh ~/.config/ohmyposh.bak
 stow -v --adopt -t $HOME home
 
-# **Untested**
-# nvim --headless "+Lazy sync" +qa 
-#
-# echo "$(which zsh)" | sudo tee -a /etc/shells 
-# sudo chsh -s "$(which zsh)" "$(whoami)" 
-# echo "Done! Please restart your terminal or run 'zsh' to use your new shell"
+# Setup Neovim plugins
+if command -v nvim &> /dev/null; then
+  echo "Installing Neovim plugins..."
+  nvim --headless "+Lazy sync" +qa 
+fi
+
+# Set zsh as default shell
+if command -v zsh &> /dev/null; then
+  # Add zsh to valid shells if not already there
+  if ! grep -q "$(which zsh)" /etc/shells; then
+    echo "$(which zsh)" | sudo tee -a /etc/shells 
+  fi
+  
+  # Change default shell to zsh if not already set
+  if [ "$SHELL" != "$(which zsh)" ]; then
+    sudo chsh -s "$(which zsh)" "$(whoami)"
+    echo "Default shell changed to zsh. Please restart your terminal or run 'zsh' to use your new shell"
+  else
+    echo "Zsh is already your default shell"
+  fi
+fi
+
+echo "Setup complete!"

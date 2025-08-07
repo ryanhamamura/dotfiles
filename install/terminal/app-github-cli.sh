@@ -1,5 +1,13 @@
 #!/bin/bash 
 
+# Check if GitHub CLI is already installed
+if command -v gh &> /dev/null; then
+    echo "GitHub CLI is already installed at $(which gh)"
+    gh --version
+    return 0 2>/dev/null || :
+fi
+
+echo "Installing GitHub CLI..."
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
 	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
