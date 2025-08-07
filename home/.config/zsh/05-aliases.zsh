@@ -1,0 +1,6 @@
+# Aliases
+alias ls='ls --color'
+alias vim=nvim
+alias ll='ls -lah'
+alias la='ls -A'
+alias l='ls -CF'

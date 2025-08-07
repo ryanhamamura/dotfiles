@@ -38,9 +38,8 @@ mv ~/.config/ohmyposh ~/.config/ohmyposh.bak
 stow -v --adopt -t $HOME home
 
 # **Untested**
-# nvim --headless "+Lazy! sync" +qa 
+# nvim --headless "+Lazy sync" +qa 
 #
-# command -v zsh | sudo tee -a /etc/shells 
-# sudo chsh -s $(which zsh) $(whoami) 
-# zsh -l 
-# echo "Done!"
+# echo "$(which zsh)" | sudo tee -a /etc/shells 
+# sudo chsh -s "$(which zsh)" "$(whoami)" 
+# echo "Done! Please restart your terminal or run 'zsh' to use your new shell"

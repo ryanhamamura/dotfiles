@@ -1,0 +1,1 @@
+Let's checkout a new branch and commit all changes with a clean, semantic commit message. No Claude attribution lines. Then create a PR request using the github cli ensuring you include a `Closes #X` statement at the end for each issue this PR closes. 
