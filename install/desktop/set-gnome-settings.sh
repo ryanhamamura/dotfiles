@@ -11,3 +11,6 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 # Turn off ambient sensors for setting screen brightness 
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+
+# Set dock position to bottom
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'

@@ -8,8 +8,11 @@ require() {
   return 1
 }
 
-# Install Desktop software if running Gnome 
-if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
+# Install Desktop software if running Gnome
+echo "Detected desktop environment: $XDG_CURRENT_DESKTOP"
+if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] || [[ "$XDG_CURRENT_DESKTOP" == *"ubuntu"* ]]; then
+  echo "GNOME desktop detected. Installing full desktop configuration..."
+  
   # Ensure computer doesn't go to sleep or lock while installing
   gsettings set org.gnome.desktop.screensaver lock-enabled false
   gsettings set org.gnome.desktop.session idle-delay 0
