@@ -58,37 +58,30 @@ Save as `tasks-[prd-file-name].md` in `tasks/` directory (e.g., `tasks-prd-user-
 # Tasks for [Feature Name]
 
 ## Relevant Files
-### To Create:
-- `path/to/new/file.ext` - Description
 
-### To Modify:
-- `path/to/existing/file.ext` - What changes needed
-
-### For Reference:
-- `path/to/reference/file.ext` - Why it's relevant
+- `path/to/potential/file1.ts` - Brief description of file relevance
+- `path/to/file1.test.ts` - Unit tests for file1
+- `path/to/existing/file2.ts` - File that needs modification
+...
 
 ## Notes
+
 - Important implementation considerations
 - Dependencies or prerequisites
-- Potential challenges or edge cases
+- Unit tests should be placed alongside code files
+- Use appropriate test command (e.g., `npm test`, `pytest`, etc.)
 
 ## Tasks
 
-### 1. [Parent Task Name]
-**Goal**: Clear description of what this accomplishes
-
-#### 1.1 [Sub-task Name]
-- **File**: `path/to/file.ext`
-- **Action**: Specific implementation steps
-- **Details**: Technical specifics, function names, etc.
-
-#### 1.2 [Sub-task Name]
-- **File**: `path/to/file.ext`
-- **Action**: Specific implementation steps
-- **Testing**: How to verify this works
-
-### 2. [Parent Task Name]
-**Goal**: Clear description of what this accomplishes
+- [ ] 1. [Parent Task Name]
+  - [ ] 1.1 [Sub-task description with specific implementation details]
+  - [ ] 1.2 [Sub-task description with file paths and actions]
+  - [ ] 1.3 [Sub-task for tests if needed]
+- [ ] 2. [Parent Task Name]
+  - [ ] 2.1 [Sub-task description]
+  - [ ] 2.2 [Sub-task description]
+- [ ] 3. [Parent Task Name]
+  - [ ] 3.1 [Sub-task description]
 ...
 ```
 

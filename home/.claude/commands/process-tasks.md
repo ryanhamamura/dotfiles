@@ -8,118 +8,70 @@ process-tasks <task-list-file>
 ```
 
 ## Description
-This command helps process an existing task list file by implementing tasks one at a time, updating progress, and maintaining documentation throughout the implementation.
+Guidelines for managing task lists in markdown files to track progress on completing a PRD. This command processes the task list file specified by the user.
 
-## Process
+## Task Implementation
 
 ### Step 1: Load Task List
-- Read the specified task list markdown file
+- Read the specified task list markdown file provided as parameter
 - Display current progress status
 - Show next sub-task to work on
 
-### Step 2: Implement Sub-Tasks (One at a Time)
-For each sub-task:
-1. **Display**: Show the current sub-task details
-2. **Implement**: Complete the implementation
-3. **Mark Complete**: Update task with `[x]` immediately upon completion
-4. **Update Files Section**: Add/update the "Relevant Files" section
-5. **Save Progress**: Save the updated task list file
-6. **Request Permission**: Ask user "Ready to proceed to next task?" and WAIT for approval
-
-### Step 3: Parent Task Completion
-When all sub-tasks of a parent task are complete:
-1. Mark parent task as complete `[x]`
-2. Run relevant tests for that component
-3. Fix any test failures before proceeding
-4. Update task list file
-
-### Step 4: Full Completion Protocol
-When ALL tasks are complete:
-1. **Run Full Test Suite**: Execute all project tests
-   ```bash
-   npm test  # or appropriate test command
-   ```
-2. **Fix Any Failures**: Address all test failures
-3. **Stage Changes**: 
-   ```bash
-   git add .
-   ```
-4. **Clean Up**: Remove any temporary files
-5. **Create Commit**: Use conventional commit format
-   ```bash
-   git commit -m "feat: [feature name] implementation complete"
-   ```
-6. **Update GitHub Issue**: Comment on the issue with completion status
+### Step 2: Process Tasks
+- **One sub-task at a time:** Do **NOT** start the next sub-task until you ask the user for permission and they say "yes" or "y"
+- **Completion protocol:**
+  1. When you finish a **sub-task**, immediately:
+     - Mark it as completed by changing `[ ]` to `[x]` in the task file
+     - Save the updated task list file
+     - Ask user for permission to continue
+  2. If **all** subtasks underneath a parent task are now `[x]`, follow this sequence:
+     - **First**: Run the full test suite (`pytest`, `npm test`, `bin/rails test`, etc.)
+     - **Only if all tests pass**: Stage changes (`git add .`)
+     - **Clean up**: Remove any temporary files and temporary code before committing
+     - **Commit**: Use a descriptive commit message that:
+       - Uses conventional commit format (`feat:`, `fix:`, `refactor:`, etc.)
+       - Summarizes what was accomplished in the parent task
+       - Lists key changes and additions
+       - References the task number and PRD context
+       - **Formats the message as a single-line command using `-m` flags**, e.g.:
+         ```
+         git commit -m "feat: add payment validation logic" -m "- Validates card type and expiry" -m "- Adds unit tests for edge cases" -m "Related to T123 in PRD"
+         ```
+  3. Once all the subtasks are marked completed and changes have been committed, mark the **parent task** as completed in the file.
+- Stop after each sub-task and wait for the user's go-ahead.
 
 ## Task List Maintenance
 
-### Continuous Updates
-- Mark tasks complete immediately when done
-- Add newly discovered tasks as they emerge
-- Update time estimates if significantly different
-- Document blockers or issues encountered
+1. **Update the task list file as you work:**
+   - Mark tasks and subtasks as completed (`[x]`) per the protocol above
+   - Add new tasks as they emerge
+   - Save the file after each update
 
-### Relevant Files Section
-Maintain an up-to-date list of:
-```markdown
-## Relevant Files
-### Created:
-- `path/to/new/file.ext` - Brief description
+2. **Maintain the "Relevant Files" section:**
+   - List every file created or modified
+   - Give each file a one-line description of its purpose
 
-### Modified:
-- `path/to/modified/file.ext` - What was changed
+## AI Instructions
 
-### Deleted:
-- `path/to/deleted/file.ext` - Why it was removed
-```
+When working with task lists, the AI must:
 
-## Implementation Guidelines
+1. **Regularly update the task list file:**
+   - After completing each sub-task, immediately update the file with `[x]`
+   - Save the file after every change
+   - Add new tasks as discovered
 
-### One Task at a Time
-- NEVER work on multiple sub-tasks simultaneously
-- Complete current task fully before moving on
-- Document any dependencies discovered
+2. **Follow the strict permission protocol:**
+   - Complete ONE sub-task
+   - Update and save the task list file
+   - Ask "Sub-task complete. Ready for next task?"
+   - WAIT for user to respond with "yes" or "y" before continuing
 
-### Permission Protocol
-After EACH sub-task:
-1. Save all file changes
-2. Update task list with `[x]`
-3. Display completion message
-4. Ask: "Sub-task complete. Ready for next task?"
-5. WAIT for user response before continuing
-
-### Error Handling
-If a task cannot be completed:
-- Mark as blocked (not complete)
-- Add note explaining the blocker
-- Create new task for resolving the blocker
-- Ask user how to proceed
-
-## Progress Tracking
-
-### Status Indicators
-- `[ ]` - Not started
-- `[x]` - Completed
-- `[~]` - In progress (current task)
-- `[!]` - Blocked
-
-### Progress Display
-Show progress regularly:
-```
-Progress: 5/12 sub-tasks complete (42%)
-Current: Task 2.3 - Implement user validation
-```
+3. **Maintain file documentation:**
+   - Keep the "Relevant Files" section current
+   - Document all created and modified files
 
 ## Important Notes
-- ALWAYS wait for user permission between tasks
-- NEVER skip the completion protocol
-- Update task list file after EVERY change
-- Keep commit messages descriptive and conventional
-- Test continuously, not just at the end
-- Document all file changes in the Relevant Files section
-
-## Output
-- **Updated task list**: Continuously saved to original file
-- **Git commits**: Created upon full completion
-- **GitHub issue updates**: Progress comments as needed
-- **Test results**: Displayed after each parent task
+- ALWAYS update and save the task list file after EVERY sub-task completion
+- NEVER proceed to the next task without explicit user permission
+- The task list file is the source of truth - keep it updated in real-time
+- Use the exact commit format shown in the examples
