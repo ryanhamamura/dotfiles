@@ -12,12 +12,17 @@ Guidelines for managing task lists in markdown files to track progress on comple
 
 ## Task Implementation
 
-### Step 1: Load Task List
+### Step 1: Setup Git Branch
+- Create and checkout a new feature branch for the work
+- Branch name should be descriptive (e.g., `feat/user-authentication` or based on PRD name)
+- Example: `git checkout -b feat/[feature-name]`
+
+### Step 2: Load Task List
 - Read the specified task list markdown file provided as parameter
 - Display current progress status
 - Show next sub-task to work on
 
-### Step 2: Process Tasks
+### Step 3: Process Tasks
 - **One sub-task at a time:** Do **NOT** start the next sub-task until you ask the user for permission and they say "yes" or "y"
 - **Completion protocol:**
   1. When you finish a **sub-task**, immediately:
