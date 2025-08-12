@@ -34,6 +34,7 @@ Analyze the existing codebase to:
 Based on the PRD analysis and current state assessment:
 - Create the file and generate the main, high-level tasks required to implement the feature
 - Use your judgement on how many high-level tasks to use (likely about 5)
+- Use checkbox format `- [ ]` for all tasks (see Output Format below)
 - Present these tasks to the user in the specified format (without sub-tasks yet)
 - Inform the user: "I have generated the high-level tasks based on the PRD. Ready to generate the sub-tasks? Respond with 'Go' to proceed."
 
@@ -42,9 +43,11 @@ Pause and wait for the user to respond with "Go".
 
 ### Step 6: Phase 2 - Generate Sub-Tasks
 Once the user confirms, break down each parent task into smaller, actionable sub-tasks:
+- **CRITICAL**: Use indented checkbox format `  - [ ]` for sub-tasks (note the 2-space indent)
 - Ensure sub-tasks logically follow from the parent task
 - Cover the implementation details implied by the PRD
 - Consider existing codebase patterns where relevant without being constrained by them
+- Each sub-task MUST use checkbox format, NOT bullet points or numbered lists
 
 ### Step 7: Identify Relevant Files
 Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section.
@@ -53,6 +56,8 @@ Based on the tasks and PRD, identify potential files that will need to be create
 Save as `tasks-[prd-file-name].md` in `tasks/` directory (e.g., `tasks-prd-user-profile-editing.md`)
 
 ## Output Format
+
+**Important: Use checkbox format `- [ ]` for all tasks, not bullet points or headers.**
 
 ```markdown
 # Tasks for [Feature Name]
