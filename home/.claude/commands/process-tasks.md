@@ -19,6 +19,7 @@ Guidelines for managing task lists in markdown files to track progress on comple
 
 ### Step 2: Process Tasks
 - **One sub-task at a time:** Do **NOT** start the next sub-task until you ask the user for permission and they say "yes" or "y"
+- **CRITICAL: Do NOT look ahead at upcoming tasks or combine similar tasks together. Focus ONLY on the current sub-task.**
 - **Completion protocol:**
   1. When you finish a **sub-task**, immediately:
      - Mark it as completed by changing `[ ]` to `[x]` in the task file
@@ -61,10 +62,11 @@ When working with task lists, the AI must:
    - Add new tasks as discovered
 
 2. **Follow the strict permission protocol:**
-   - Complete ONE sub-task
+   - Complete ONE sub-task (do not combine or look ahead)
    - Update and save the task list file
    - Ask "Sub-task complete. Ready for next task?"
    - WAIT for user to respond with "yes" or "y" before continuing
+   - Do NOT anticipate or prepare for the next task
 
 3. **Maintain file documentation:**
    - Keep the "Relevant Files" section current
@@ -73,5 +75,7 @@ When working with task lists, the AI must:
 ## Important Notes
 - ALWAYS update and save the task list file after EVERY sub-task completion
 - NEVER proceed to the next task without explicit user permission
+- NEVER combine similar tasks or look ahead at what's coming next
+- Focus ONLY on the current sub-task - treat each task in isolation
 - The task list file is the source of truth - keep it updated in real-time
 - Use the exact commit format shown in the examples
