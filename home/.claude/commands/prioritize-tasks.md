@@ -1,0 +1,1 @@
+Let's review the order of these tasks to ensure the blocking items are addressed first. For each item, think hard about what code it's dependent on, and check if it's already been implemented or it's within the list of tasks. Blocking items should be tackled first. Make sense? 
