@@ -1,13 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "includeCoAuthoredBy": false, 
+  "includeCoAuthoredBy": false,
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Write|Edit|MultiEdit", 
+        "matcher": "Write|Edit|MultiEdit",
         "hooks": [
           {
-            "type": "command", 
+            "type": "command",
             "command": "~/.claude/hooks/lint-on-save.sh"
           }
         ]
@@ -18,8 +18,19 @@
         "matcher": "Bash",
         "hooks": [
           {
-            "type": "command", 
+            "type": "command",
             "command": "~/.claude/hooks/check-changelog-for-pr.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "aplay ~/Music/big-sur-success-chime-soundboard-streamlit-app.wav"
           }
         ]
       }
