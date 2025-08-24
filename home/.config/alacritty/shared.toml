@@ -4,10 +4,10 @@ TERM = "xterm-256color"
 # [shell]
 
 [window]
-padding.x = 16 
+padding.x = 16
 padding.y = 14 
 decorations = "None" 
-opacity = 0.98
+opacity = 0.96
 
 [keyboard]
 bindings = [
