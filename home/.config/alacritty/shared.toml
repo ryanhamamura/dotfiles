@@ -1,7 +1,9 @@
 [env]
 TERM = "xterm-256color"
 
-# [shell]
+[shell]
+program = "/usr/bin/tmux"
+args = ["new-session", "-A", "-D", "-s", "main"]
 
 [window]
 padding.x = 18
