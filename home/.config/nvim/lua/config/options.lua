@@ -4,3 +4,4 @@
 
 -- Keep cursor near center unless at beginning or end of file
 vim.opt.scrolloff = 999
+vim.opt.wrap = true
