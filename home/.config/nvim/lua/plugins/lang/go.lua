@@ -57,6 +57,7 @@ return {
       },
     },
   },
+
   {
     "mfussenegger/nvim-lint",
     optional = true,
@@ -72,6 +73,28 @@ return {
       },
     },
   },
+
+  {
+    "leoluz/nvim-dap-go",
+    opts = {},
+  },
+
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "fredrikaverpil/neotest-golang",
+    },
+    opts = {
+      adapters = {
+        ["neotest-golang"] = {
+          -- Here we can set options for neotest-golang, e.g.
+          -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+          dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+        },
+      },
+    },
+  },
+
   {
     "neovim/nvim-lspconfig",
     opts = {
