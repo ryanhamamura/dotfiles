@@ -1,1 +1,1 @@
-import = [ "~/.config/alacritty/fonts/CaskaydiaMono.toml"]
+import = ["~/.config/alacritty/fonts/JetBrainsMono.toml"]

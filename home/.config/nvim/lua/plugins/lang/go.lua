@@ -1,5 +1,78 @@
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "go", "gomod", "gowork", "gosum" },
+    },
+  },
+  {
+    "mason-org/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "goimports",
+        "gofumpt",
+        "golangci-lint",
+        "gomodifytags",
+        "impl",
+        "delve",
+      },
+    },
+  },
+  {
+    "nvim-mini/mini.icons",
+    opts = {
+      file = {
+        [".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
+      },
+      filetype = {
+        gotmpl = { glyph = "󰟓", hl = "MiniIconsGrey" },
+      },
+    },
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    optional = true,
+    dependencies = {
+      {
+        "mason-org/mason.nvim",
+        opts = { ensure_installed = { "gomodifytags", "impl" } },
+      },
+    },
+    opts = function(_, opts)
+      local nls = require "null-ls"
+      opts.source = vim.list_extend(opts.sources or {}, {
+        nls.builtins.code_actions.gomodifytags,
+        nls.builtins.code_actions.impl,
+        nls.builtins.formatting.goimports,
+        nls.builtins.formatting.gofumpt,
+      })
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        templ = { "templ" },
+        go = { "goimports", "gofumpt" },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    dependencies = {
+      {
+        "mason-org/mason.nvim",
+        opts = { ensure_installed = { "golangci-lint" } },
+      },
+    },
+    opts = {
+      linters_by_ft = {
+        go = { "golangcilint" },
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
