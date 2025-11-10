@@ -3,7 +3,7 @@ return {
   opts = {
     formatters_by_ft = {
       templ = { "templ" },
-      go = { "gofmt" },
+      go = { "goimports", "gofumpt" },
     },
   },
 }
