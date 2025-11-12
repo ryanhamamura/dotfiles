@@ -20,6 +20,7 @@ return {
       "markdown_inline",
       "printf",
       "query",
+      "sql",
       "templ",
       "toml",
       "vim",
