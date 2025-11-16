@@ -110,6 +110,7 @@ return {
         gopls = {
           settings = {
             gopls = {
+              gofumpt = true,
               codelenses = {
                 generate = true,
                 regenerate_cgo = true,
@@ -125,7 +126,7 @@ return {
                 constantValues = false,
                 functionTypeParameters = false,
                 ignoredError = true,
-                parameterNames = false,
+                parameterNames = true,
                 rangeVariableNames = true,
               },
               analyses = {
