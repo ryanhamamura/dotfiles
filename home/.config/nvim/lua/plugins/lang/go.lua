@@ -111,6 +111,12 @@ return {
           settings = {
             gopls = {
               gofumpt = true,
+              usePlaceholders = false,
+              completeUnimported = true,
+              staticcheck = true,
+              directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+              semanticTokens = true,
+              newGoFileHeader = true,
               codelenses = {
                 generate = true,
                 regenerate_cgo = true,
@@ -135,12 +141,6 @@ return {
                 unusedwrite = true,
                 useany = true,
               },
-              usePlaceholders = true,
-              completeUnimported = true,
-              staticcheck = true,
-              directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-              semanticTokens = true,
-              newGoFileHeader = true,
             },
           },
         },

@@ -8,3 +8,5 @@ ZSH_CONFIG="${HOME}/.config/zsh"
 for config in ${ZSH_CONFIG}/*.zsh; do
   source "$config"
 done
+# Claude Oracle
+export PATH="$HOME/.oracle:$PATH"

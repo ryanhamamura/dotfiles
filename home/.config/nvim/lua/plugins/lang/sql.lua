@@ -28,4 +28,14 @@ return {
       end
     end,
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        postgres_lsp = {
+          filetypes = { "sql" },
+        },
+      },
+    },
+  },
 }
