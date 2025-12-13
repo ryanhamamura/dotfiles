@@ -1,23 +1,19 @@
 return {
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = { "go", "gomod", "gowork", "gosum" },
     },
   },
+
   {
-    "mason-org/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "goimports",
-        "gofumpt",
-        "golangci-lint",
-        "gomodifytags",
-        "impl",
-        "delve",
-      },
-    },
+    "catgoose/templ-goto-definition",
+    ft = { "go" },
+    config = true,
+    dependencies = "nvim-treesitter/nvim-treesitter",
   },
+
   {
     "nvim-mini/mini.icons",
     opts = {
@@ -29,6 +25,7 @@ return {
       },
     },
   },
+
   {
     "nvimtools/none-ls.nvim",
     optional = true,
@@ -75,27 +72,6 @@ return {
   },
 
   {
-    "leoluz/nvim-dap-go",
-    opts = {},
-  },
-
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "fredrikaverpil/neotest-golang",
-    },
-    opts = {
-      adapters = {
-        ["neotest-golang"] = {
-          -- Here we can set options for neotest-golang, e.g.
-          -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
-          dap_go_enabled = true, -- requires leoluz/nvim-dap-go
-        },
-      },
-    },
-  },
-
-  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -113,7 +89,7 @@ return {
               gofumpt = true,
               usePlaceholders = false,
               completeUnimported = true,
-              staticcheck = true,
+              staticcheck = false,
               directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
               semanticTokens = true,
               newGoFileHeader = true,
@@ -131,8 +107,8 @@ return {
                 compositeLiteralTypes = false,
                 constantValues = false,
                 functionTypeParameters = false,
-                ignoredError = true,
-                parameterNames = true,
+                ignoredError = false,
+                parameterNames = false,
                 rangeVariableNames = true,
               },
               analyses = {
