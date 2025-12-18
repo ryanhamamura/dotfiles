@@ -7,7 +7,7 @@ return {
           -- exclude a filetype from the default_config
           filetypes_exclude = { "markdown" },
           -- add additional filetypes to the default_config
-          filetypes_include = { "templ" },
+          -- filetypes_include = { "templ" },
           -- to fully override the default_config, change the below
           -- filetypes = {}
 
@@ -28,7 +28,7 @@ return {
       },
       setup = {
         tailwindcss = function(_, opts)
-          opts.filetypes = opts.filetypes or {}
+          opts.filetypes = opts.filetypes or { "templ" }
 
           -- Add default filetypes
           vim.list_extend(opts.filetypes, vim.lsp.config.tailwindcss.filetypes)
